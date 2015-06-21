@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Pager" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VL9-fT-VC8">
+                                <rect key="frame" x="0.0" y="-32" width="600" height="640"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="yZi-Sb-OSN"/>
+                                </connections>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="9Xt-68-ryB">
+                                <rect key="frame" x="280" y="282" width="39" height="37"/>
+                                <color key="currentPageIndicatorTintColor" red="0.34509803919999998" green="0.34509803919999998" blue="0.34509803919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VL9-fT-VC8" firstAttribute="centerX" secondItem="9Xt-68-ryB" secondAttribute="centerX" id="6oy-lz-L3K"/>
+                            <constraint firstItem="VL9-fT-VC8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="400" id="Ad6-cy-38k"/>
+                            <constraint firstItem="9Xt-68-ryB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KUq-Ik-lpS"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9Xt-68-ryB" secondAttribute="bottom" constant="10" id="Mp6-tS-091"/>
+                            <constraint firstItem="9Xt-68-ryB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Rrq-9k-L5X"/>
+                            <constraint firstItem="VL9-fT-VC8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="SL6-Wr-mZr"/>
+                            <constraint firstItem="VL9-fT-VC8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="400" id="W2q-Ke-kmk"/>
+                            <constraint firstItem="9Xt-68-ryB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="iwO-ZP-FNF"/>
+                            <constraint firstItem="VL9-fT-VC8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wHB-mH-VV8"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9Xt-68-ryB" secondAttribute="bottom" constant="10" id="xdo-b2-9de"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="KUq-Ik-lpS"/>
+                                <exclude reference="Rrq-9k-L5X"/>
+                                <exclude reference="iwO-ZP-FNF"/>
+                                <exclude reference="6oy-lz-L3K"/>
+                                <exclude reference="Ad6-cy-38k"/>
+                                <exclude reference="SL6-Wr-mZr"/>
+                                <exclude reference="W2q-Ke-kmk"/>
+                                <exclude reference="wHB-mH-VV8"/>
+                                <exclude reference="Mp6-tS-091"/>
+                                <exclude reference="xdo-b2-9de"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="KUq-Ik-lpS"/>
+                                <include reference="Rrq-9k-L5X"/>
+                                <include reference="iwO-ZP-FNF"/>
+                                <include reference="6oy-lz-L3K"/>
+                                <include reference="Ad6-cy-38k"/>
+                                <include reference="SL6-Wr-mZr"/>
+                                <include reference="W2q-Ke-kmk"/>
+                                <include reference="wHB-mH-VV8"/>
+                                <include reference="Mp6-tS-091"/>
+                                <include reference="xdo-b2-9de"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="pageControl" destination="9Xt-68-ryB" id="fc0-wJ-FoC"/>
+                        <outlet property="scrollView" destination="VL9-fT-VC8" id="cyA-Rm-br9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="85.5" y="311.25"/>
+        </scene>
+    </scenes>
+</document>
