@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIScrollViewDelegate {
+class ViewController: UIViewController, UIScrollViewDelegate, CollectionViewControllerDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
@@ -60,6 +60,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             if let collectionViewController = CollectionViewControllerFactory.create() {
                 collectionViewController.identifier = self.pages[page]
                 collectionViewController.pageNumber = page
+                collectionViewController.delegate = self
                 controller = NavigationController(rootViewController:collectionViewController)
                 self.viewControllers[page] = controller
             }
@@ -88,8 +89,37 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         self.loadScrollViewWithPage(min)
         self.loadScrollViewWithPage(page)
         self.loadScrollViewWithPage(page+1)
-        
     }
     
+    // MARK: CollectionViewControllerDelegate
+    func collectionViewAddPage(collectionview: UICollectionView) {
+        //
+        addPage()
+    }
+    
+    private func addPage() {
+        var controller: NavigationController?
+        let page = self.viewControllers.count
+        
+        if let collectionViewController = CollectionViewControllerFactory.create() {
+            collectionViewController.identifier = "add+ \(page)"
+            collectionViewController.pageNumber = page
+            collectionViewController.delegate = self
+            controller = NavigationController(rootViewController:collectionViewController)
+            self.viewControllers.append(controller)
+        }
+    
+        self.scrollView.contentSize = CGSizeMake(CGRectGetWidth(self.scrollView.frame) * CGFloat(page+1), CGRectGetHeight(self.scrollView.frame))
+        
+        if controller!.view.superview == nil {
+            var frame = self.scrollView.frame
+            frame.origin.x = CGRectGetWidth(frame) * CGFloat(page)
+            frame.origin.y = 0
+            controller!.view.frame = frame
+            self.addChildViewController(controller!)
+            self.scrollView.addSubview(controller!.view)
+            controller!.didMoveToParentViewController(self)
+        }
+    }
 }
 

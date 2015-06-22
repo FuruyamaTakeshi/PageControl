@@ -8,12 +8,18 @@
 
 import UIKit
 
+protocol CollectionViewControllerDelegate {
+    
+    func collectionViewAddPage(collectionview: UICollectionView)
+}
+
 private let reuseIdentifier = "Cell"
 
 class CollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout{
     
     var pageNumber:Int?
     var identifier: String?
+    var delegate: CollectionViewControllerDelegate?
     
     var dataSource = ["a", "b", "c", "d", "f", "g", "h", "i", "j", "k", "l", "add"]
     
@@ -82,18 +88,10 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         //
         if indexPath.row == self.dataSource.count - 1 {
-            
-            let viewController = CollectionViewControllerFactory.create()
-            viewController?.identifier = "fufu"
-            viewController?.pageNumber = PageManager.sharedManager.viewControllers.count
-            let navigationController = NavigationController(rootViewController:viewController!)
-            
-            PageManager.sharedManager.addPage(navigationController)
-//            let viewController = UIViewController()
-//            self.navigationController?.pushViewController(viewController, animated: true)
+            self.delegate?.collectionViewAddPage(collectionView)
         }
-
     }
+    
     /*
     // Uncomment this method to specify if the specified item should be highlighted during tracking
     override func collectionView(collectionView: UICollectionView, shouldHighlightItemAtIndexPath indexPath: NSIndexPath) -> Bool {
