@@ -19,6 +19,10 @@
 		7A0A28131B351E0D00B5228F /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0A28121B351E0D00B5228F /* CollectionViewCell.swift */; };
 		7A0A28161B36F2A800B5228F /* PageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0A28151B36F2A800B5228F /* PageManager.swift */; };
 		7A0A28181B36F4D700B5228F /* CollectionViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0A28171B36F4D700B5228F /* CollectionViewControllerFactory.swift */; };
+		7A5B2E881B3C6B1B00016ED0 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5B2E861B3C6B1B00016ED0 /* CustomCollectionViewCell.swift */; };
+		7A5B2E891B3C6B1B00016ED0 /* CustomCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A5B2E871B3C6B1B00016ED0 /* CustomCollectionViewCell.xib */; };
+		7A5B2E8C1B3C747700016ED0 /* MyCectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5B2E8A1B3C747700016ED0 /* MyCectionViewCell.swift */; };
+		7A5B2E8D1B3C747700016ED0 /* MyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A5B2E8B1B3C747700016ED0 /* MyCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +61,10 @@
 		7A0A28121B351E0D00B5228F /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		7A0A28151B36F2A800B5228F /* PageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageManager.swift; sourceTree = "<group>"; };
 		7A0A28171B36F4D700B5228F /* CollectionViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewControllerFactory.swift; sourceTree = "<group>"; };
+		7A5B2E861B3C6B1B00016ED0 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		7A5B2E871B3C6B1B00016ED0 /* CustomCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCollectionViewCell.xib; sourceTree = "<group>"; };
+		7A5B2E8A1B3C747700016ED0 /* MyCectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCectionViewCell.swift; sourceTree = "<group>"; };
+		7A5B2E8B1B3C747700016ED0 /* MyCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +150,11 @@
 				7A0A27E01B3443EF00B5228F /* ViewController.swift */,
 				7A0A28101B34FA6900B5228F /* NavigationController.swift */,
 				7A0A280C1B3446F500B5228F /* CollectionViewController.swift */,
+				7A5B2E8A1B3C747700016ED0 /* MyCectionViewCell.swift */,
+				7A5B2E8B1B3C747700016ED0 /* MyCollectionViewCell.xib */,
 				7A0A28121B351E0D00B5228F /* CollectionViewCell.swift */,
+				7A5B2E861B3C6B1B00016ED0 /* CustomCollectionViewCell.swift */,
+				7A5B2E871B3C6B1B00016ED0 /* CustomCollectionViewCell.xib */,
 				7A0A27E21B3443EF00B5228F /* Main.storyboard */,
 			);
 			path = ViewControllers;
@@ -254,6 +266,8 @@
 				7A0A27E91B3443EF00B5228F /* LaunchScreen.storyboard in Resources */,
 				7A0A27E61B3443EF00B5228F /* Assets.xcassets in Resources */,
 				7A0A27E41B3443EF00B5228F /* Main.storyboard in Resources */,
+				7A5B2E891B3C6B1B00016ED0 /* CustomCollectionViewCell.xib in Resources */,
+				7A5B2E8D1B3C747700016ED0 /* MyCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,9 +295,11 @@
 				7A0A28161B36F2A800B5228F /* PageManager.swift in Sources */,
 				7A0A28131B351E0D00B5228F /* CollectionViewCell.swift in Sources */,
 				7A0A280E1B3446F500B5228F /* CollectionViewController.swift in Sources */,
+				7A5B2E881B3C6B1B00016ED0 /* CustomCollectionViewCell.swift in Sources */,
 				7A0A28111B34FA6900B5228F /* NavigationController.swift in Sources */,
 				7A0A28181B36F4D700B5228F /* CollectionViewControllerFactory.swift in Sources */,
 				7A0A27E11B3443EF00B5228F /* ViewController.swift in Sources */,
+				7A5B2E8C1B3C747700016ED0 /* MyCectionViewCell.swift in Sources */,
 				7A0A27DF1B3443EF00B5228F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,7 +393,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -415,7 +431,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

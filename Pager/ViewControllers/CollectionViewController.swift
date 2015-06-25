@@ -31,8 +31,13 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
+//        self.collectionView!.registerClass(CustomCollectionViewCell.self, forCellWithReuseIdentifier: "CustomCell")
         self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView!.registerNib(UINib(nibName: "CustomCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CustomCell")
+        self.collectionView!.registerNib(UINib(nibName: "MyCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MyCell")
 
+
+        
         // Do any additional setup after loading the view.
         self.configureBackgroundColor()
     }
@@ -73,14 +78,22 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath)
-    
-        // Configure the cell
-        cell.backgroundColor = UIColor.whiteColor()
-        let label = UILabel(frame: CGRectMake(0.0, 0.0, 64.0, 64.0))
-        label.text = self.dataSource[indexPath.row]
-        cell.contentView.addSubview(label)
-        return cell
+        
+        var cell: UICollectionViewCell?
+        if indexPath.row%2 == 0 {
+            cell = collectionView.dequeueReusableCellWithReuseIdentifier("CustomCell", forIndexPath: indexPath) as? CustomCollectionViewCell
+            cell?.backgroundColor = UIColor.whiteColor()
+            //            cell?.titleLabel.text = "hoho"
+            
+            // Configure the cell
+            //            cell?.titleLabel.text = "hoge"
+            return cell!
+        } else {
+            
+            cell = collectionView.dequeueReusableCellWithReuseIdentifier("MyCell", forIndexPath: indexPath) as? MyCollectionViewCell
+            return cell!
+        }
+
     }
 
     // MARK: UICollectionViewDelegate
