@@ -31,12 +31,10 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-//        self.collectionView!.registerClass(CustomCollectionViewCell.self, forCellWithReuseIdentifier: "CustomCell")
         self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         self.collectionView!.registerNib(UINib(nibName: "CustomCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CustomCell")
         self.collectionView!.registerNib(UINib(nibName: "MyCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MyCell")
-
-
+        self.collectionView!.registerNib(UINib(nibName: "AddCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "AddCell")
         
         // Do any additional setup after loading the view.
         self.configureBackgroundColor()
@@ -80,20 +78,24 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         var cell: UICollectionViewCell?
-        if indexPath.row%2 == 0 {
-            cell = collectionView.dequeueReusableCellWithReuseIdentifier("CustomCell", forIndexPath: indexPath) as? CustomCollectionViewCell
-            cell?.backgroundColor = UIColor.whiteColor()
-            //            cell?.titleLabel.text = "hoho"
-            
-            // Configure the cell
-            //            cell?.titleLabel.text = "hoge"
+        
+        if indexPath.row == self.dataSource.count - 1 {
+            cell = collectionView.dequeueReusableCellWithReuseIdentifier("AddCell", forIndexPath: indexPath) as? AddCollectionViewCell
             return cell!
         } else {
-            
-            cell = collectionView.dequeueReusableCellWithReuseIdentifier("MyCell", forIndexPath: indexPath) as? MyCollectionViewCell
-            return cell!
+            if indexPath.row%2 == 0 {
+                var customCell: CustomCollectionViewCell?
+                customCell = collectionView.dequeueReusableCellWithReuseIdentifier("CustomCell", forIndexPath: indexPath) as? CustomCollectionViewCell
+                customCell?.titleLabel.text = "\(indexPath.row)"
+                cell?.backgroundColor = UIColor.whiteColor()
+                
+                return customCell!
+            } else {
+                
+                cell = collectionView.dequeueReusableCellWithReuseIdentifier("MyCell", forIndexPath: indexPath) as? MyCollectionViewCell
+                return cell!
+            }
         }
-
     }
 
     // MARK: UICollectionViewDelegate
@@ -135,7 +137,7 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     */
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSizeMake(128.0, 128.0)
+        return CGSizeMake(108.0, 108.0)
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {

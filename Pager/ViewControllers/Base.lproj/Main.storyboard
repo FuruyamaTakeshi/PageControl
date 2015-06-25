@@ -30,6 +30,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="VL9-fT-VC8" firstAttribute="leading" secondItem="9Xt-68-ryB" secondAttribute="leading" id="6NR-fI-6lm"/>
                             <constraint firstItem="VL9-fT-VC8" firstAttribute="centerX" secondItem="9Xt-68-ryB" secondAttribute="centerX" id="6oy-lz-L3K"/>
                             <constraint firstItem="VL9-fT-VC8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="400" id="Ad6-cy-38k"/>
                             <constraint firstItem="9Xt-68-ryB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KUq-Ik-lpS"/>
@@ -37,34 +38,42 @@
                             <constraint firstItem="9Xt-68-ryB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Rrq-9k-L5X"/>
                             <constraint firstItem="VL9-fT-VC8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="SL6-Wr-mZr"/>
                             <constraint firstItem="VL9-fT-VC8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="400" id="W2q-Ke-kmk"/>
+                            <constraint firstItem="VL9-fT-VC8" firstAttribute="centerX" secondItem="9Xt-68-ryB" secondAttribute="centerX" id="caH-cz-I7r"/>
                             <constraint firstItem="9Xt-68-ryB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="iwO-ZP-FNF"/>
+                            <constraint firstItem="VL9-fT-VC8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lSw-0q-nFo"/>
                             <constraint firstItem="VL9-fT-VC8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wHB-mH-VV8"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9Xt-68-ryB" secondAttribute="bottom" constant="10" id="xdo-b2-9de"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="KUq-Ik-lpS"/>
+                                <exclude reference="Rrq-9k-L5X"/>
+                                <exclude reference="iwO-ZP-FNF"/>
+                                <exclude reference="6NR-fI-6lm"/>
                                 <exclude reference="6oy-lz-L3K"/>
                                 <exclude reference="Ad6-cy-38k"/>
                                 <exclude reference="SL6-Wr-mZr"/>
                                 <exclude reference="W2q-Ke-kmk"/>
+                                <exclude reference="caH-cz-I7r"/>
+                                <exclude reference="lSw-0q-nFo"/>
                                 <exclude reference="wHB-mH-VV8"/>
-                                <exclude reference="KUq-Ik-lpS"/>
-                                <exclude reference="Rrq-9k-L5X"/>
-                                <exclude reference="iwO-ZP-FNF"/>
                                 <exclude reference="Mp6-tS-091"/>
                                 <exclude reference="xdo-b2-9de"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
                             <mask key="constraints">
-                                <include reference="6oy-lz-L3K"/>
-                                <include reference="Ad6-cy-38k"/>
+                                <exclude reference="KUq-Ik-lpS"/>
+                                <include reference="Rrq-9k-L5X"/>
+                                <exclude reference="iwO-ZP-FNF"/>
+                                <include reference="6NR-fI-6lm"/>
+                                <exclude reference="6oy-lz-L3K"/>
+                                <exclude reference="Ad6-cy-38k"/>
                                 <include reference="SL6-Wr-mZr"/>
                                 <include reference="W2q-Ke-kmk"/>
-                                <include reference="wHB-mH-VV8"/>
-                                <include reference="KUq-Ik-lpS"/>
-                                <include reference="Rrq-9k-L5X"/>
-                                <include reference="iwO-ZP-FNF"/>
+                                <include reference="caH-cz-I7r"/>
+                                <include reference="lSw-0q-nFo"/>
+                                <exclude reference="wHB-mH-VV8"/>
                                 <include reference="Mp6-tS-091"/>
                                 <include reference="xdo-b2-9de"/>
                             </mask>
